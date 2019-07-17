@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Tuple.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> Tuple.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>28/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.08% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>19/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>28/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import RtError from "./rt-error";
+&nbsp;
+const TupleTypes = {
+  Point: 1.0,
+  Vector: 0.0
+};
+&nbsp;
+class Tuple {
+  static get Type() {
+    return TupleTypes;
+  }
+&nbsp;
+  constructor(x, y, z, w) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.w = w;
+  }
+&nbsp;
+  static point(x, y, z) {
+    return new Tuple(x, y, z, Tuple.Type.Point);
+  }
+&nbsp;
+  static vector(x, y, z) {
+    return new Tuple(x, y, z, Tuple.Type.Vector);
+  }
+&nbsp;
+  get type() {
+    return this.w;
+  }
+&nbsp;
+  equals(other) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!(other instanceof Tuple)) {
+<span class="cstat-no" title="statement not covered" >      throw new RtError(</span>
+        RtError.Code.INVALID_TYPE,
+        "Tuple equals can only accept a Tuple"
+      );
+    }
+&nbsp;
+    return (
+      this.w === other.w &amp;&amp;
+      Math.abs(this.x - other.x) &lt; Number.EPSILON &amp;&amp;
+      Math.abs(this.y - other.y) &lt; Number.EPSILON &amp;&amp;
+      Math.abs(this.z - other.z) &lt; Number.EPSILON
+    );
+  }
+&nbsp;
+  add(other) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.w === TupleTypes.Point &amp;&amp; other.w === TupleTypes.Point) {
+<span class="cstat-no" title="statement not covered" >      throw new RtError(</span>
+        RtError.Code.INVALID_TYPE,
+        "Can not add Point to Point"
+      );
+    }
+&nbsp;
+    return new Tuple(
+      this.x + other.x,
+      this.y + other.y,
+      this.z + other.z,
+      this.w + other.w
+    );
+  }
+&nbsp;
+  subtract(other) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.w === TupleTypes.Vector &amp;&amp; other.w === TupleTypes.Point) {
+<span class="cstat-no" title="statement not covered" >      throw new RtError(</span>
+        RtError.Code.INVALID_TYPE,
+        "Can not subtract Point from Vector"
+      );
+    }
+&nbsp;
+    return new Tuple(
+      this.x - other.x,
+      this.y - other.y,
+      this.z - other.z,
+      this.w - other.w
+    );
+  }
+&nbsp;
+  negate() {
+    return new Tuple(-this.x, -this.y, -this.z, -this.w);
+  }
+&nbsp;
+  multiply(scalar) {
+    return new Tuple(
+      this.x * scalar,
+      this.y * scalar,
+      this.z * scalar,
+      this.w * scalar
+    );
+  }
+&nbsp;
+  divide(scalar) {
+    return new Tuple(
+      this.x / scalar,
+      this.y / scalar,
+      this.z / scalar,
+      this.w / scalar
+    );
+  }
+&nbsp;
+  magnitude() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.w !== TupleTypes.Vector) {
+<span class="cstat-no" title="statement not covered" >      throw new RtError(</span>
+        RtError.Code.INVALID_TYPE,
+        "Magnitude can only be used with vectors"
+      );
+    }
+&nbsp;
+    return Math.sqrt(this.x ** 2 + this.y ** 2 + this.z ** 2);
+  }
+&nbsp;
+  normalize() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.w !== TupleTypes.Vector) {
+<span class="cstat-no" title="statement not covered" >      throw new RtError(</span>
+        RtError.Code.INVALID_TYPE,
+        "Normalize can only be used with vectors"
+      );
+    }
+    const magnitude = this.magnitude();
+    return this.divide(magnitude);
+  }
+&nbsp;
+  dotProduct(other) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.w !== TupleTypes.Vector || other.w !== TupleTypes.Vector) {
+<span class="cstat-no" title="statement not covered" >      throw new RtError(</span>
+        RtError.Code.INVALID_TYPE,
+        "dotProduct can only be used with vectors"
+      );
+    }
+&nbsp;
+    return (
+      this.x * other.x + this.y * other.y + this.z * other.z + this.w * other.w
+    );
+  }
+&nbsp;
+  crossProduct(other) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.w !== TupleTypes.Vector || other.w !== TupleTypes.Vector) {
+<span class="cstat-no" title="statement not covered" >      throw new RtError(</span>
+        RtError.Code.INVALID_TYPE,
+        "dotProduct can only be used with vectors"
+      );
+    }
+&nbsp;
+    return Tuple.vector(
+      this.y * other.z - this.z * other.y,
+      this.z * other.x - this.x * other.z,
+      this.x * other.y - this.y * other.x
+    );
+  }
+}
+&nbsp;
+module.exports = Tuple;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jul 14 2019 23:31:51 GMT-1000 (Hawaii-Aleutian Standard Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

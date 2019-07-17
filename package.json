@@ -49,6 +49,12 @@
     "> 1%",
     "last 2 versions"
   ],
+  "majestic": {
+    "jestScriptPath": "./node_modules/@vue/cli-service/bin/vue-cli-service.js",
+    "args": [
+      "test:unit"
+    ]
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
@@ -77,6 +83,7 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
+    ],
+    "setupFilesAfterEnv": ["jestExpectExtends"]
   }
 }
