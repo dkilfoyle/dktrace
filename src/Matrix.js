@@ -8,7 +8,15 @@ export class Matrix {
     }
     this.rows = rows || 4;
     this.cols = cols || 4;
-    this.data = data || new Array(rows * cols);
+
+    if (data) {
+      this.data = data;
+    } else {
+      this.data = new Array(rows * cols).fill(0);
+      for (let i = 0; i < this.rows; i++) {
+        this.set(i, i, 1.0);
+      }
+    }
   }
   at(row, col) {
     return this.data[row * this.cols + col];
@@ -16,7 +24,8 @@ export class Matrix {
   set(row, col, val) {
     this.data[row * this.cols + col] = val;
   }
-  equals(other) {
+  equals(other, digits) {
+    digits = digits || 15;
     if (!(other instanceof Matrix)) {
       throw new RtError(
         RtError.Code.INVALID_TYPE,
@@ -25,7 +34,11 @@ export class Matrix {
     }
     if (this.rows !== other.rows) return false;
     if (this.cols !== other.cols) return false;
-    return this.data.every((x, i) => other.data[i] === x);
+    return this.data.every(
+      (x, i) =>
+        Math.abs(Math.round(other.data[i], digits) - Math.round(x, digits)) <
+        Number.EPSILON
+    );
   }
   multiply(other) {
     if (other instanceof Tuple) {
@@ -93,5 +106,21 @@ export class Matrix {
   }
   cofactor(r, c) {
     return this.minor(r, c) * ((r + c) % 2 ? -1 : 1);
+  }
+  invertible() {
+    return !(Math.abs(this.determinant()) < Number.EPSILON);
+  }
+  inverse() {
+    if (!this.invertible) throw new RtError("Inverse not invertible");
+
+    const m = new Matrix(4, 4);
+
+    for (let r = 0; r < this.rows; r++) {
+      for (let c = 0; c < this.cols; c++) {
+        let cf = this.cofactor(r, c);
+        m.set(c, r, cf / this.determinant());
+      }
+    }
+    return m;
   }
 }
